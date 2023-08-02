@@ -10,7 +10,7 @@ az account show
 echo ""
 echo "setting up terraform"
 
-cd $JENKINS_HOME/source/definitions/storage-account/templates
+cd $JENKINS_HOME/deployments/definitions/terraform/storage-account/templates
 
 echo "Terraform files"
 ls -1

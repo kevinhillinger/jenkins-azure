@@ -21,7 +21,7 @@ RUN apt-get install terraform
 USER jenkins
 
 ENV DEFAULT_PLUGINS="command-launcher credentials-binding workflow-api pipeline-build-step workflow-cps workflow-support gradle cloudbees-folder build-timeout git git-client"
-ENV MODM_PLUGINS="azure-cli azure-credentials azure-ad terraform"
+ENV MODM_PLUGINS="azure-cli azure-credentials@254.v64da_8176c83a azure-ad terraform"
 
 RUN jenkins-plugin-cli --plugins $DEFAULT_PLUGINS
 RUN jenkins-plugin-cli --plugins $MODM_PLUGINS
