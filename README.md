@@ -1,5 +1,17 @@
 # MODM v2 - Jenkins experimental
 
+## Overview
+
+**packages** - represents the Deployment Package
+
+**scripts/run.sh** - location where the docker container is started for Jenkins and where the volumes are mounted.
+
+    Volumes
+    - jenkins_home
+    - jenkins/scripts
+    - packages --> jenkins_home/packages
+
+
 ## Setup
 
 setup the source functions to call in the terminal.
@@ -21,7 +33,7 @@ Functions available:
 
 ## Test Terraform template
 
-using: https://github.com/alfonsof/terraform-azure-examples/tree/master/code/06-create-blob-storage 
+using: https://github.com/alfonsof/terraform-azure-examples/
 
 ## Credentials
 

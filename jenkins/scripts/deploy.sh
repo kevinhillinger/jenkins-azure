@@ -10,7 +10,8 @@ az account show
 echo ""
 echo "setting up terraform"
 
-cd $JENKINS_HOME/deployments/definitions/terraform/storage-account/templates
+# this path is the result of the docker run with a volume "packages" mounted to jenkins_home
+cd $JENKINS_HOME/packages/storage-account/templates
 
 echo "Terraform files"
 ls -1
@@ -21,5 +22,5 @@ export ARM_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID
 export ARM_TENANT_ID=$AZURE_TENANT_ID
 
 terraform init
-terraform plan -var-file="parameters.tfvars"
-terraform apply -auto-approve -var-file="parameters.tfvars"
+terraform plan -var-file="../parameters.tfvars" -out main.tfplan
+terraform apply main.tfplan -auto-approve
