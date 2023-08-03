@@ -23,4 +23,4 @@ export ARM_TENANT_ID=$AZURE_TENANT_ID
 
 terraform init
 terraform plan -var-file="../parameters.tfvars" -out main.tfplan
-terraform apply main.tfplan -auto-approve
+terraform apply -auto-approve main.tfplan
